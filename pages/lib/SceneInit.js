@@ -18,9 +18,9 @@ export default class SceneInit {
 			this.fov,
 			window.innerWidth / window.innerHeight,
 			1,
-			1000
+			10000
 		);
-		this.camera.position.z = 196;
+		this.camera.position.z = 200;
 
 		this.clock = new THREE.Clock();
 		this.scene = new THREE.Scene();
