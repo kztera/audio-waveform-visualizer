@@ -19,7 +19,7 @@ export default function Home() {
 		analyser = audioContext.createAnalyser();
 		source.connect(analyser);
 		analyser.connect(audioContext.destination);
-		analyser.fftSize = 1024;
+		analyser.fftSize = 4096;
 		dataArray = new Uint8Array(analyser.frequencyBinCount);
 	};
 
@@ -50,9 +50,10 @@ export default function Home() {
 		// const planeGeometry = new THREE.TorusGeometry(16, 8, 64, 64);
 		// const planeGeometry = new THREE.TorusKnotGeometry(16, 8, 64, 64);
 		// const planeGeometry = new THREE.DodecahedronGeometry(16, 0);
+		// const planeGeometry = new THREE.PlaneGeometry(100, 100, 100, 100);
 
 		// Thiết lập Mesh và thêm vào scene
-		const planeGeometry = new THREE.PlaneGeometry(100, 100, 100, 100);
+		const planeGeometry = new THREE.BoxGeometry(100, 100, 50, 100, 100, 100);
 		const planeCustomMaterial = new THREE.ShaderMaterial({
 			uniforms: uniforms,
 			vertexShader: vertexShader(),
@@ -84,6 +85,10 @@ export default function Home() {
 					"Rainy Night": "./rain.mp3",
 					"Rain, you and me.. - Duckie": "./Rain, you and me.. - Duckie.mp3",
 					"Why you won't stay? - Karrot": "./why you wont stay.mp3",
+					"Đó chẳng phải là lý do nữa": "./Đó chẳng phải là lý do nữa.mp3",
+					"Pogo - Forget": "./Pogo Forget.mp3",
+					"Lonely World": "./Lonely World.mp3",
+					"Be the One": "./Be the One - Dua Lipa.mp3",
 				})
 				.name("Song")
 				.listen();
